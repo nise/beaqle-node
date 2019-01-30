@@ -1,0 +1,33 @@
+{
+  "TestName": "Test",
+  "LoopByDefault": true,
+  "ShowFileIDs": false,
+  "ShowResults": false,
+  "EnableABLoop": true,
+  "EnableOnlineSubmission": false,
+  "BeaqleServiceURL": "",
+  "SupervisorContact": "", 
+  "AudioRoot": "",
+  "question": "Deine Ome ist gern grüne",
+  "instruction": "Drücken Sie die Buttons um die Wiedergabe zu starten oder zu stoppen.",
+  "next":"Nächste Aufgabe",
+  "previous":"Vorherige Aufgabe",
+  "Testsets": [
+    {
+      "Name": "Frage",
+      "TestID": "id1",
+      "Files": {
+        "A": "./audio/google-de-DE-Standard-A-ssml-ke1-10.mp3",
+        "B": "./audio/polly-Marlene-ssml-ke1-10.mp3"
+      }
+    },
+    {
+      "Name": "Frage",
+      "TestID": "id2",
+      "Files": {
+        "A": "./audio/google-de-DE-Standard-A-ssml-ke1-10.mp3",
+        "B": "./audio/polly-Marlene-ssml-ke1-10.mp3"
+      }
+    }
+  ]
+}

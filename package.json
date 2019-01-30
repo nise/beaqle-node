@@ -1,0 +1,46 @@
+{
+  "name": "beaqljs-node",
+  "version": "1.0.0",
+  "description": "Table of contents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nise/beaqle-node.git"
+  },
+  "keywords": [
+    "a/b",
+    "test",
+    "mushra",
+    "test",
+    "abx",
+    "test"
+  ],
+  "author": "niels.seidel@fernuni-hagen.de",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nise/beaqle-node/issues"
+  },
+  "homepage": "https://github.com/nise/beaqle-node#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.4",
+    "express-json": "^1.0.0",
+    "express-metrics": "^1.1.0",
+    "express-minify-html": "^0.12.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "express-winston": "^3.0.1",
+    "locals": "0.0.4",
+    "method-override": "^3.0.0",
+    "path": "^0.12.7",
+    "winston": "^3.2.1"
+  }
+}
