@@ -1,3 +1,10 @@
+## beaqle-node 
+
+* ported the backend from php to node.js
+* added further options to the abx-setup
+* removed the x option from the abx test 
+* improved data capturing by adding further data such as time, date, and option
+
 ## BeaqleJS v0.3 ##
 
 * Add auto return option on switching items
