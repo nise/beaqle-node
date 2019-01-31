@@ -8,7 +8,6 @@ var
     express = require('express'),
     expressValidator = require('express-validator'),
     expressMinify = require('express-minify-html'),
-    expressMetrics = require('express-metrics'),
     app = express(),
     compression = require('compression'),
     path = require('path'),
@@ -25,23 +24,6 @@ let settings = {
 
 /* configure application **/
 app.set('port', process.env.PORT || settings.port);
-
-//var expressWinston = require('express-winston');
-//var winston = require('winston'); // for transports.Console
-
-/*app.use(expressWinston.logger({
-    transports: [
-        new winston.transports.Console()
-    ],
-    format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.splat(),
-        winston.format.simple()//..json()
-    )
-}));
-//winston.log('info', 'test message %s', 'my string');
-*/
-app.use(expressMetrics({ port: 8091 })); // start a metrics server
 app.use(compression())
 app.use(expressMinify({
     override: true,
