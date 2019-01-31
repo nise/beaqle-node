@@ -1,3 +1,6 @@
 *~
 audio/
 audio/*
+node_modules
+*.mp3
+*.csv

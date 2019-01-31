@@ -77,12 +77,12 @@ var AudioPool = function (PoolID) {
     var _this = this;
     setInterval(this.loopCallback, this.positionUpdateInterval * 1000, _this);
 
-}
+};
 
 // insert audio pool into DOM
 AudioPool.prototype.register = function () {
     $('<div id="' + this.PoolID + '"></div>').appendTo('body');
-}
+};
 
 // callback for timeUpdate event
 AudioPool.prototype.loopCallback = function (_this) {
@@ -104,7 +104,7 @@ AudioPool.prototype.loopCallback = function (_this) {
             }
         }
     }
-}
+};
 
 // ---------------------------------------------------------
 // overwrite these callbacks events after instantiation
