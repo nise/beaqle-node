@@ -1,12 +1,13 @@
 
-This is a node.js port of the [beaqlejs](https://github.com/HSU-ANT/beaqlejs) developed by S. Kraft and U. Zölzer. The original has been ported because of several seriouse code problems and missing capturing data.
+This is a node.js port of the [beaqlejs](https://github.com/HSU-ANT/beaqlejs) developed by S. Kraft and U. Zölzer. The original code has been ported because of an unfavorably architecture and bugs in the code. Beside that, the provided tests and the captured data in these tests ware considered as improvable. 
 
 To install the backend run the following commands: `npm install`.
 
+Tests can be configured as described below.
+
 Start the server by the command: `node index`
 
-See the test results in the folder "results"
-
+See the test results in the folder "results".
 
 ---
 
