@@ -1,6 +1,1 @@
-date,question,option,file,alternative
-
-2019-01-30T14:36:07.124Z,0,B,./audio/polly-Marlene-ssml-ke1-10.mp3,./audio/google-de-DE-Standard-A-ssml-ke1-10.mp3
-2019-01-30T14:36:11.198Z,1,B,./audio/polly-Marlene-ssml-ke1-10.mp3,./audio/google-de-DE-Standard-A-ssml-ke1-10.mp3
-2019-01-30T14:36:56.792Z,0,B,./audio/polly-Marlene-ssml-ke1-10.mp3,./audio/google-de-DE-Standard-A-ssml-ke1-10.mp3
-2019-01-30T14:36:58.598Z,1,B,./audio/polly-Marlene-ssml-ke1-10.mp3,./audio/google-de-DE-Standard-A-ssml-ke1-10.mp3
+user,age,gender,date,question,option,file,alternative
