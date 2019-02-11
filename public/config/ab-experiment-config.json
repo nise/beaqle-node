@@ -1,6 +1,6 @@
 {
 	"TestName": "Vergleichsuntersuchung von stimmlichen Hörproben",
-	"maxNumberOfTests": 10,
+	"maxNumberOfTests": 15,
 	"LoopByDefault": true,
 	"ShowFileIDs": false,
 	"ShowResults": false,
