@@ -35,19 +35,12 @@ body {
     text-align: right;
 }
 
-#TestTitle {
-    text-align:center;
-    font-size:2em;
-    font-weight:bold;
-    color: #999999;
-}
 
 #LoadOverlay {
     display:none;
 }
 
 #TestIntroduction {
-    text-align:center;
     min-height:300px;
     display: none;	
 }
@@ -59,12 +52,10 @@ body {
 }
 
 #TestHeading {
-    text-align:center;
-    font-size:1.5em;
+    text-align:left;
+    font-size:0.8em;
     margin-bottom:20px;	
-    padding:5px;
-    border-radius: 3px;
-    background-color:#dddddd;
+    font-weight: bold;
 }
 
 #TableContainer {
