@@ -254,7 +254,7 @@ AudioPool.prototype.pause = function () {
 
 // set volume of <audio> tags
 AudioPool.prototype.setVolume = function (vol) {
-    var vol = $('#VolumeSlider').slider('option', 'value') / 100;
+    var vol = document.getElementById('VolumeSlider').getAttribute('value') / 100;//$('#VolumeSlider').slider('option', 'value') / 100;
 
     var audioTags = $('#' + this.PoolID + ' > audio');
     for (var i = 0; i < audioTags.length; i++) {
@@ -447,6 +447,8 @@ var ListeningTest = function (TestData) {
 
     // setup buttons and controls
     var handlerObject = this;
+    var volSlider = document.getElementById('VolumeSlider');
+
     $('#VolumeSlider').slider({
         min: 0,
         max: 100,
@@ -488,11 +490,11 @@ var ListeningTest = function (TestData) {
     $('#ChkAutoReturn').on('change', $.proxy(handlerObject.toggleAutoReturn, handlerObject));
 
     $('#ProgressBar').progressbar();
-    $('#BtnNextTest').text(this.TestConfig.next);
-    $('#BtnNextTest').button();
+    //$('#BtnNextTest').text(this.TestConfig.next);
+    //$('#BtnNextTest').button();
     $('#BtnNextTest').on('click', $.proxy(handlerObject.nextTest, handlerObject));
-    $('#BtnPrevTest').text(this.TestConfig.previous);
-    $('#BtnPrevTest').button();
+    //$('#BtnPrevTest').text(this.TestConfig.previous);
+    //$('#BtnPrevTest').button();
     $('#BtnPrevTest').on('click', $.proxy(handlerObject.prevTest, handlerObject));
     $('#BtnStartTest').button();
     $('#BtnSubmitData').button({ icons: { primary: 'ui-icon-signal-diag' } });
@@ -553,39 +555,40 @@ ListeningTest.prototype.nextTest = function () {
         this.runTest(this.TestState.TestSequence[this.TestState.CurrentTest]);
     } else {
         // if previous test was last one, ask before loading final page and then exit test
-       // if (confirm('This was the last test. Do you want to finish?')) {
+        // if (confirm('This was the last test. Do you want to finish?')) {
 
-            $('#TableContainer').hide();
-            $('#PlayerControls').hide();
-            $('#BtnNextTest').hide();
-            $('#TestEnd').show();
+        $('#TableContainer').hide();
+        $('#PlayerControls').hide();
+        $('#BtnNextTest').hide();
+        $('#TestEnd').show();
 
-            $('#ResultsBox').html(this.formatResults());
-            if (this.TestConfig.ShowResults)
-                $("#ResultsBox").show();
-            else
-                $("#ResultsBox").hide();
+        $('#ResultsBox').html(this.formatResults());
+        if (this.TestConfig.ShowResults)
+            $("#ResultsBox").show();
+        else
+            $("#ResultsBox").hide();
 
-            $("#SubmitBox").show();
-            $('#BtnSubmitData').show();
+        $("#SubmitBox").show();
+        $('#BtnSubmitData').show();
 
-            $("#SubmitBox > .submitEmail").hide();
-            if (this.TestConfig.EnableOnlineSubmission) {
-                $("#SubmitBox > .submitOnline").show();
-                $("#SubmitBox > .submitDownload").hide();
-            } else {
-                $("#SubmitBox > .submitOnline").hide();
-                if (this.TestConfig.SupervisorContact) {
-                    $("#SubmitBox > .submitEmail").show();
-                    $(".supervisorEmail").html(this.TestConfig.SupervisorContact);
-                }
-                if (this.browserFeatures.webAPIs['Blob']) {
-                    $("#SubmitBox > .submitDownload").show();
-                } else {
-                    $("#SubmitBox > .submitDownload").hide();
-                    $("#ResultsBox").show();
-                }
+        $("#SubmitBox > .submitEmail").hide();
+        if (this.TestConfig.EnableOnlineSubmission) {
+            $("#SubmitBox > .submitOnline").show();
+            $("#SubmitBox > .submitDownload").hide();
+        } else {
+            $("#SubmitBox > .submitOnline").hide();
+            if (this.TestConfig.SupervisorContact) {
+                $("#SubmitBox > .submitEmail").show();
+                $(".supervisorEmail").html(this.TestConfig.SupervisorContact);
             }
+            if (this.browserFeatures.webAPIs['Blob']) {
+                $("#SubmitBox > .submitDownload").show();
+            } else {
+                $("#SubmitBox > .submitDownload").hide();
+                $("#ResultsBox").show();
+            }
+        }
+        this.SubmitTestResults();
         //}
         return;
     }
@@ -653,7 +656,7 @@ ListeningTest.prototype.runTest = function (TestIdx) {
     this.createTestDOM(TestIdx);
 
     // set current test name
-    $('#TestHeading').html(this.TestConfig.Testsets[TestIdx].Name + " (" + (this.TestState.CurrentTest + 1) + " of " + this.TestState.TestSequence.length + ")");
+    $('#TestHeading').html(" Aufgabe " + (this.TestState.CurrentTest + 1) + " von " + this.TestState.TestSequence.length + "");// this.TestConfig.Testsets[TestIdx].Name + 
     $('#TestHeading').show();
 
     // hide everything instead of load animation
@@ -827,24 +830,23 @@ ListeningTest.prototype.SubmitTestResults = function () {
     UserObj.UserEmail = $('#UserEMail').val();
     UserObj.UserComment = $('#UserComment').val();
 
-    var EvalResults = this.TestState.EvalResults;
+    var userData = {};
+    userData.age = document.getElementById('formage').value;
+    userData.gender = document.getElementById('formgender').value;
+    userData.user = Math.ceil(Math.random() * 10000000);
 
-
-    var testHandle = this;
     $.ajax({
         type: "POST",
         timeout: 5000,
         url: '/submit-test',//testHandle.TestConfig.BeaqleServiceURL,
-        data: {data: JSON.stringify(this.TestState.resultset)},
-        //results:JSON.stringify(EvalResults), 
-        //username:UserObj.UserName
-        //},
+        //data: {data: JSON.stringify({data: this.TestState.resultset, user: userData})},
+        data: { data: JSON.stringify({ data: this.TestState.resultset, user: userData }) },
         dataType: 'json'
     })
-        .done(function (response) { 
-            $('#TestControls').hide();
-        })
-        .fail(function (xhr, ajaxOptions, thrownError) { });
+    .done(function (response) {
+        $('#TestControls').hide();
+    })
+    .fail(function (xhr, ajaxOptions, thrownError) { });
     //$('#BtnSubmitData').button('option', { icons: { primary: 'load-indicator' } }).show();
 
 }
@@ -1034,9 +1036,9 @@ MushraTest.prototype.createTestDOM = function (TestIdx) {
     cell[0] = row.insertCell(-1);
     cell[0].innerHTML = "<span class='testItem'>Reference</span>";
     cell[1] = row.insertCell(-1);
-    cell[1].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton" rel="' + fileID + '">Play</button>';
+    cell[1].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton btn btn-primary" rel="' + fileID + '">Play</button>';
     cell[2] = row.insertCell(-1);
-    cell[2].innerHTML = "<button class='stopButton'>Stop</button>";
+    cell[2].innerHTML = "<button class='stopButton btn btn-light'>Stop</button>";
     cell[3] = row.insertCell(-1);
     cell[3].innerHTML = "<img id='ScaleImage' src='" + this.TestConfig.RateScalePng + "'/>";
 
@@ -1063,9 +1065,9 @@ MushraTest.prototype.createTestDOM = function (TestIdx) {
         cell[0] = row[i].insertCell(-1);
         cell[0].innerHTML = "<span class='testItem'>Test Item " + (i + 1) + "</span>";
         cell[1] = row[i].insertCell(-1);
-        cell[1].innerHTML = '<button id="play' + relID + 'Btn" class="playButton" rel="' + relID + '">Play</button>';
+        cell[1].innerHTML = '<button id="play' + relID + 'Btn" class="playButton btn btn-primary" rel="' + relID + '">Play</button>';
         cell[2] = row[i].insertCell(-1);
-        cell[2].innerHTML = "<button class='stopButton'>Stop</button>";
+        cell[2].innerHTML = "<button class='stopButton btn btn-light'>Stop</button>";
         cell[3] = row[i].insertCell(-1);
         var fileIDstr = "";
         if (this.TestConfig.ShowFileIDs) {
@@ -1190,7 +1192,7 @@ AbxTest.prototype.createTestDOM = function (TestIdx) {
     fileID = "A";
     row = tab.insertRow(-1);
     cell[0] = row.insertCell(-1);
-    cell[0].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton" rel="' + fileID + '">A</button>';
+    cell[0].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton btn btn-primary" rel="' + fileID + '">A</button>';
     this.addAudio(TestIdx, fileID, fileID);
 
     fileID = this.TestState.FileMappings[TestIdx].X;
@@ -1201,11 +1203,11 @@ AbxTest.prototype.createTestDOM = function (TestIdx) {
 
     fileID = "B";
     cell[2] = row.insertCell(-1);
-    cell[2].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton" rel="' + fileID + '">B</button>';
+    cell[2].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton btn btn-primary" rel="' + fileID + '">B</button>';
     this.addAudio(TestIdx, fileID, fileID);
 
     cell[3] = row.insertCell(-1);
-    cell[3].innerHTML = "<button class='stopButton'>Stop</button>";
+    cell[3].innerHTML = "<button class='stopButton btn btn-light'>Stop</button>";
 
     cell[4] = row.insertCell(-1);
     cell[4].innerHTML = this.TestConfig.instruction;
@@ -1251,12 +1253,12 @@ AbxTest.prototype.readRatings = function (TestIdx) {
 AbxTest.prototype.saveRatings = function (TestIdx) {
     if ($("#selectA").prop("checked")) {
         this.TestState.Ratings[TestIdx] = "A";
-        this.TestState.resultset[TestIdx] = { option: "A", question: TestIdx, file: this.TestConfig.Testsets[TestIdx].Files.A, file_alternative: this.TestConfig.Testsets[TestIdx].Files.B, date: new Date() };
+        this.TestState.resultset[TestIdx] = { option: "A", question: TestIdx, file: this.TestConfig.Testsets[TestIdx].Files.A, file_alternative: this.TestConfig.Testsets[TestIdx].Files.B, date: Date.now() };
     } else if ($("#selectB").prop("checked")) {
         this.TestState.Ratings[TestIdx] = "B";
-        this.TestState.resultset[TestIdx] = { option: "B", question: TestIdx, file: this.TestConfig.Testsets[TestIdx].Files.B, file_alternative: this.TestConfig.Testsets[TestIdx].Files.A, date: new Date() };
+        this.TestState.resultset[TestIdx] = { option: "B", question: TestIdx, file: this.TestConfig.Testsets[TestIdx].Files.B, file_alternative: this.TestConfig.Testsets[TestIdx].Files.A, date: Date.now() };
     }
-
+    console.log(TestIdx, this.TestState.Ratings[TestIdx]);
 }
 
 AbxTest.prototype.formatResults = function () {
@@ -1347,16 +1349,16 @@ PrefTest.prototype.createTestDOM = function (TestIdx) {
     fileID = this.TestState.FileMappings[TestIdx].A;
     row = tab.insertRow(-1);
     cell[0] = row.insertCell(-1);
-    cell[0].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton" rel="' + fileID + '">A</button>';
+    cell[0].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton btn btn-primary" rel="' + fileID + '">A</button>';
     this.addAudio(TestIdx, fileID, fileID);
 
     fileID = this.TestState.FileMappings[TestIdx].B;
     cell[1] = row.insertCell(-1);
-    cell[1].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton" rel="' + fileID + '">B</button>';
+    cell[1].innerHTML = '<button id="play' + fileID + 'Btn" class="playButton btn btn-primary" rel="' + fileID + '">B</button>';
     this.addAudio(TestIdx, fileID, fileID);
 
     cell[2] = row.insertCell(-1);
-    cell[2].innerHTML = "<button class='stopButton'>Stop</button>";
+    cell[2].innerHTML = "<button class='stopButton btn btn-light'>Stop</button>";
 
     cell[3] = row.insertCell(-1);
     cell[3].innerHTML = "Press buttons to start/stop playback.";
@@ -1407,6 +1409,8 @@ PrefTest.prototype.saveRatings = function (TestIdx) {
         this.TestState.Ratings[TestIdx] = "B";
         this.TestState.resultset[TestIdx] = { option: "B", question: TestIdx, file: this.TestConfig.Testsets[TestIdx].Files.B, file_alternative: this.TestConfig.Testsets[TestIdx].Files.A, date: new Date() };
     }
+
+
 }
 
 PrefTest.prototype.formatResults = function () {

@@ -1,0 +1,354 @@
+{
+	"TestName": "Vergleichsuntersuchung von stimmlichen Hörproben",
+	"maxNumberOfTests": 10,
+	"LoopByDefault": true,
+	"ShowFileIDs": false,
+	"ShowResults": false,
+	"EnableABLoop": true,
+	"EnableOnlineSubmission": false,
+	"BeaqleServiceURL": "",
+	"SupervisorContact": "",
+	"AudioRoot": "",
+	"question": "Wählen Sie die Aufzeichnung aus, die sich für Sie natürlicher anhört.",
+	"instruction": "",
+	"next": "Nächste Aufgabe",
+	"previous": "Vorherige Aufgabe",
+	"Testsets": [
+		{
+			"Name": "Set ssml-ke1",
+			"TestID": "id-ssml-ke1",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke1-10.mp3",
+				"B": "./output/audio/polly-Marlene-ssml-ke1-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke1",
+			"TestID": "id-ssml-ke1",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke1-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke1-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke1",
+			"TestID": "id-ssml-ke1",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke1-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke1-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke1",
+			"TestID": "id-ssml-ke1",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke1-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke1-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke1",
+			"TestID": "id-ssml-ke1",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke1-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke1-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke1",
+			"TestID": "id-ssml-ke1",
+			"Files": {
+				"A": "./output/audio/google-de-DE-Standard-B-ssml-ke1-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke1-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke2",
+			"TestID": "id-ssml-ke2",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke2-10.mp3",
+				"B": "./output/audio/polly-Marlene-ssml-ke2-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke2",
+			"TestID": "id-ssml-ke2",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke2-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke2-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke2",
+			"TestID": "id-ssml-ke2",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke2-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke2-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke2",
+			"TestID": "id-ssml-ke2",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke2-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke2-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke2",
+			"TestID": "id-ssml-ke2",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke2-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke2-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke2",
+			"TestID": "id-ssml-ke2",
+			"Files": {
+				"A": "./output/audio/google-de-DE-Standard-B-ssml-ke2-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke2-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke3",
+			"TestID": "id-ssml-ke3",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke3-10.mp3",
+				"B": "./output/audio/polly-Marlene-ssml-ke3-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke3",
+			"TestID": "id-ssml-ke3",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke3-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke3-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke3",
+			"TestID": "id-ssml-ke3",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke3-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke3-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke3",
+			"TestID": "id-ssml-ke3",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke3-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke3-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke3",
+			"TestID": "id-ssml-ke3",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke3-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke3-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke3",
+			"TestID": "id-ssml-ke3",
+			"Files": {
+				"A": "./output/audio/google-de-DE-Standard-B-ssml-ke3-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke3-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke4",
+			"TestID": "id-ssml-ke4",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke4-10.mp3",
+				"B": "./output/audio/polly-Marlene-ssml-ke4-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke4",
+			"TestID": "id-ssml-ke4",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke4-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke4-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke4",
+			"TestID": "id-ssml-ke4",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke4-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke4-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke4",
+			"TestID": "id-ssml-ke4",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke4-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke4-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke4",
+			"TestID": "id-ssml-ke4",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke4-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke4-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke4",
+			"TestID": "id-ssml-ke4",
+			"Files": {
+				"A": "./output/audio/google-de-DE-Standard-B-ssml-ke4-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke4-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke5",
+			"TestID": "id-ssml-ke5",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke5-10.mp3",
+				"B": "./output/audio/polly-Marlene-ssml-ke5-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke5",
+			"TestID": "id-ssml-ke5",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke5-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke5-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke5",
+			"TestID": "id-ssml-ke5",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke5-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke5-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke5",
+			"TestID": "id-ssml-ke5",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke5-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke5-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke5",
+			"TestID": "id-ssml-ke5",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke5-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke5-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke5",
+			"TestID": "id-ssml-ke5",
+			"Files": {
+				"A": "./output/audio/google-de-DE-Standard-B-ssml-ke5-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke5-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke6",
+			"TestID": "id-ssml-ke6",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke6-10.mp3",
+				"B": "./output/audio/polly-Marlene-ssml-ke6-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke6",
+			"TestID": "id-ssml-ke6",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke6-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke6-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke6",
+			"TestID": "id-ssml-ke6",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke6-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke6-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke6",
+			"TestID": "id-ssml-ke6",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke6-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke6-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke6",
+			"TestID": "id-ssml-ke6",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke6-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke6-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke6",
+			"TestID": "id-ssml-ke6",
+			"Files": {
+				"A": "./output/audio/google-de-DE-Standard-B-ssml-ke6-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke6-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke7",
+			"TestID": "id-ssml-ke7",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke7-10.mp3",
+				"B": "./output/audio/polly-Marlene-ssml-ke7-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke7",
+			"TestID": "id-ssml-ke7",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke7-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke7-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke7",
+			"TestID": "id-ssml-ke7",
+			"Files": {
+				"A": "./output/audio/polly-Hans-ssml-ke7-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke7-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke7",
+			"TestID": "id-ssml-ke7",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke7-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-B-ssml-ke7-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke7",
+			"TestID": "id-ssml-ke7",
+			"Files": {
+				"A": "./output/audio/polly-Marlene-ssml-ke7-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke7-10.mp3"
+			}
+		},
+		{
+			"Name": "Set ssml-ke7",
+			"TestID": "id-ssml-ke7",
+			"Files": {
+				"A": "./output/audio/google-de-DE-Standard-B-ssml-ke7-10.mp3",
+				"B": "./output/audio/google-de-DE-Standard-A-ssml-ke7-10.mp3"
+			}
+		}
+	]
+}

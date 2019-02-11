@@ -75,20 +75,23 @@ console.log('***************************************************************\n\n
 var fs = require('fs');
 
 app.post('/submit-test', function (req, res) {
+    
     saveLog(req.body.data);
-    console.log('test message ', req.body.data);
-    res.redirect('/thanx');
+    //res.redirect('/thanx');
 });
 
 app.get('/thanx', function (req, res) {
     res.send('Recht herzlichen Dank für die Teilnahme an dieser Studie!');
 });
 
-var saveLog = function (data) {
+var saveLog = function (str) { 
+    var json = JSON.parse(str);
+    var data = json.data;
+    console.log('test: ', data);
     var out = '';//'date,question,option,file,alternative\n';
-    var data = JSON.parse(data);
+    
     for (var i = 0; i < data.length; i++) {
-        out += data[i].date + ',' + data[i].question + ',' + data[i].option + ',' + data[i].file + ',' + data[i].file_alternative + '\n';
+        out += json.user.user + ','+json.user.age + ','+json.user.gender + ','+data[i].date + ',' + data[i].question + ',' + data[i].option + ',' + data[i].file.replace("./output/audio/",'') + ',' + data[i].file_alternative.replace("./output/audio/",'') + '\n';
     }
     fs.appendFile('./results/results.csv', out);
 };
