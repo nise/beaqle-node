@@ -11,7 +11,10 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
-    <script src="js/beaqle.js" type="text/javascript"></script>
+    <script src="js/beaqle.audio.js" type="text/javascript"></script>
+    <script src="js/beaqle.utils.js" type="text/javascript"></script>
+    <script src="js/beaqle.test.listening.js" type="text/javascript"></script>
+    <script src="js/beaqle.test.ab.js" type="text/javascript"></script>
     <script type="text/javascript">
         /* <![CDATA[ */
 
@@ -48,7 +51,7 @@
                     // get random subset of size 10
                     TestConfig.Testsets = getNRandomElements(TestConfig.Testsets, TestConfig.maxNumberOfTests);
                     //testHandle = new MushraTest(TestConfig);    // <-- MUSHRA test class
-                    testHandle = new AbxTest(TestConfig);     // <-- ABX test class
+                    testHandle = new ABTest(TestConfig);     // <-- ABX test class
 
                     $('#Footer').prepend(testHandle.browserFeatureString() + '<br/>');
                 },
